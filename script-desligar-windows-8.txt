@@ -1,0 +1,27 @@
+@echo Tem certeza que quer desligar o computador?
+@echo.
+@echo 1 - SIM
+@echo 2 - NAO
+@echo 3 - REINICIAR
+@echo.
+@echo ===========================================
+@echo.
+@echo off
+set /p opcao= Escolha uma opcao: 
+
+if %opcao% equ 1 (
+	goto opcao1
+) else if %opcao% equ 3 (
+	goto opcao3
+) else (
+	goto opcao2
+)
+
+:opcao1
+shutdown -s -t 00
+
+:opcao2
+exit
+
+:opcao3
+shutdown -r -t 0
